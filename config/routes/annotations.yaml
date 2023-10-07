@@ -1,0 +1,13 @@
+controllers:
+    resource: ../../src/Controller/
+    type: annotation
+
+kernel:
+    resource: ../../src/Kernel.php
+    type: annotation
+home:
+    path: /
+    controller: App\Controller\HomeController::show
+app_author_details:
+    path: '/author/{id}'
+    controller: 'App\Controller\HomeController::authorDetails'

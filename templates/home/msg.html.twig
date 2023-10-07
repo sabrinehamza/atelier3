@@ -1,0 +1,28 @@
+{#<h1>Bonjour {{n |upper}}<h1>#}
+{% set x =5 %}
+{{x}}
+
+{{dump (auth)}}
+{% for t in auth %}
+{% if (t.nb_books>0 ) %}
+<input type="submit" value="buy"
+{% endif %}
+{{t.username}}
+<img src="{{t.picture}}">
+{%endfor %}
+
+{{auth[0].username }}
+{% for authors in auth %}
+{{authors.username |upper}}
+{% endfor %}
+
+{{auth |length}}
+
+{% set totalbooks=0 %}
+{% for authors in auth %}
+{% set totalbooks = totalbooks+ authors.nb_books%}
+{{totalbooks}}
+{%endfor%}
+{% for authers in auth %}
+{<a href="{{ path(’authordetails’,{'id': author.id}) }}">details</a> }
+{%endfor%}
